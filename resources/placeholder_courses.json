@@ -1,0 +1,22 @@
+[
+		{
+				"code":"cis102",
+				"name":"web development"
+		},
+		{
+				"code":"math101",
+				"name":"basics of mathematics"
+		},
+		{
+				"code":"math2",
+				"name":"intermediate math"
+		},
+		{
+				"code":"cis101",
+				"name":"programming"
+		},
+		{
+				"code":"eng101",
+				"name":"elementary english"
+		}
+]
