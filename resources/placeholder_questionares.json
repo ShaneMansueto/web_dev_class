@@ -2,7 +2,7 @@
 		{
 				"course":"Math101",
 				"title":"Addition",
-				"problems": [
+				"problems":[
 						{
 								"question":"123+321=?",
 								"answer":444
@@ -20,7 +20,7 @@
 		{
 				"course":"Math2",
 				"title":"Subtraction",
-				"problems": [
+				"problems":[
 						{
 								"question":"123-(-321)=?",
 								"answer":444
@@ -32,6 +32,20 @@
 						{
 								"question":"(-123)+21=?",
 								"answer":-101
+						}
+				]
+		},
+		{
+				"course":"eng101"
+				"title":"Opposites"
+				"problems":[
+						{
+								"question":"Opposite of sit",
+								"answer":"stand"
+						},
+						{
+								"question":"Opposite of bright",
+								"answer":"dark"
 						}
 				]
 		}
