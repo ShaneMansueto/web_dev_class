@@ -36,8 +36,8 @@
 				]
 		},
 		{
-				"course":"eng101"
-				"title":"Opposites"
+				"course":"eng101",
+				"title":"Opposites",
 				"problems":[
 						{
 								"question":"Opposite of sit",
