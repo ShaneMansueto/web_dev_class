@@ -1,6 +1,6 @@
 [
 		{
-				"course_subject":"Math101",
+				"course":"Math101",
 				"title":"Addition",
 				"problems": [
 						{
@@ -18,7 +18,7 @@
 				]
 		},
 		{
-				"course_subject":"Math2",
+				"course":"Math2",
 				"title":"Subtraction",
 				"problems": [
 						{
