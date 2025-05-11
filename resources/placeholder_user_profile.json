@@ -1,0 +1,10 @@
+{
+		"user_id":1111,
+		"username":"Joe Jody",
+		"user_privilege":"student",
+		"enabled_courses":[
+				"Math101",
+				"Math2",
+				"cis102"
+		]
+}
