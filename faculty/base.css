@@ -1,3 +1,9 @@
+a{
+		cursor: pointer;
+}
+button{
+		cursor: pointer;
+}
 span{
 		font-size: 18px;
 }
@@ -85,6 +91,13 @@ main{
 		background-color: var(--color);
 		border: solid 2px;
 		border-radius: 4px;
+		max-height: 65svh;
+		overflow-y: auto;
+}
+
+.form-section{
+		--columns: 1fr;
+		display: grid;
 }
 
 .content-label{
@@ -131,4 +144,33 @@ main{
 		align-self: center;
 		margin-bottom: 24px;
 		font-size: 16px;
+		min-height: 60px;
+}
+
+.input-wrapper{
+		height: 180px;
+		width: 80%;
+		justify-self: center;
+		margin-top: 24px;
+		margin-bottom: 24px;
+}
+
+.input-button{
+		height: 50px;
+}
+
+.question{
+		height: 60px;
+		width: 80%;
+}
+
+.answer{ 
+		height: 30px;
+		width: 50%;
+}
+
+.show-content .content-element{
+		display: block;
+		margin-left: 10%;
+		margin-top: 16px;
 }
