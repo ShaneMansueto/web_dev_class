@@ -31,6 +31,7 @@ inputButton.onclick = addInput
 function formatContent() {
 		for (var i = 0; i < localStorage.length; i++) {
 				let item = JSON.parse(localStorage.getItem(localStorage.key(i)))
+				if (!item.hasOwnProperty("problems")) continue
 				let formatedItem = document.createElement("a")
 				let formatedElement1 = document.createElement("span")
 				let formatedElement2 = document.createElement("span")
@@ -66,7 +67,7 @@ function formatContent() {
 								contentSection.classList.remove("show-content")
 								contentSection.append(contentLabel)
 								contentButton.onclick = contentFlipper
-								contentButton.innerHTML = "Add Content"
+								contentButton.innerHTML = "Add Resource"
 								formatContent()
 						}
 				}
@@ -135,11 +136,11 @@ initialize()
 const contentFlipper = () => {
 		if (contentFlip) {
 				submitContent()
-				contentButton.innerHTML = "Add Content"
+				contentButton.innerHTML = "Add Resource"
 		}
 		else {
 				addContent()
-				contentButton.innerHTML = "Submit Content"
+				contentButton.innerHTML = "Submit Resource"
 		}
 		contentFlip = !contentFlip
 }

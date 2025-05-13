@@ -1,0 +1,6 @@
+@import "base.css";
+
+.content-section{
+		--columns: 1fr;
+		padding: 30px;
+}

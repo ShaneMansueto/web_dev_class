@@ -1,5 +1,8 @@
 @import "base.css";
 
+main{
+		--hue: 50;
+}
 .content-section{
 		--columns: 1fr 2fr;
 }

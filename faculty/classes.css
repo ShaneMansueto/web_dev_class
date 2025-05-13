@@ -1,5 +1,12 @@
 @import "base.css";
 
+main{
+		--hue: 20;
+}
 .content-section{
 		--columns: 1fr 1fr 1fr;
+}
+
+.input-wrapper{
+		height: 60px;
 }

@@ -15,9 +15,10 @@ const addInput = () => {
 		inputButton.insertAdjacentHTML("beforebegin", `
 				<div class="input-wrapper">
 						<label for="user_id${inputCount}">Student${inputCount + 1} ID:</label>
-						<textarea class="content-input" id="user_id${inputCount}" type="text"></textarea>
+						<input class="content-input" id="user_id${inputCount}" type="text"></input>
+				<br/>
 						<label for="username${inputCount}">Student${inputCount + 1} Name:</label>
-						<textarea class="content-input" id="username${inputCount}" type="text"></textarea>
+						<input class="content-input" id="username${inputCount}" type="text"></input>
 				</div>
 				`)
 		inputCount++
@@ -28,6 +29,7 @@ inputButton.onclick = addInput
 function formatContent() {
 		for (var i = 0; i < localStorage.length; i++) {
 				let item = JSON.parse(localStorage.getItem(localStorage.key(i)))
+				if (!item.hasOwnProperty("class_list")) continue
 				let formatedItem = document.createElement("a")
 				let formatedElement1 = document.createElement("span")
 				let formatedElement2 = document.createElement("span")
@@ -56,9 +58,11 @@ function formatContent() {
 								let formatedElement3 = document.createElement("span")
 								formatedElement1.className = "content-element"
 								formatedElement2.className = "content-element"
-								formatedElement1.innerHTML = user.user_id
-								formatedElement2.innerHTML = user.username
-								formatedElement3.innerHTML = user.username + "\n"
+								formatedElement3.className = "content-element"
+								formatedElement1.innerHTML = "User ID: " + user.user_id
+								formatedElement2.innerHTML = "Name: " + user.username
+								formatedElement3.innerHTML = "GPA: " + user.gpa
+								contentSection.append(document.createElement("br"))
 								contentSection.append(formatedElement1)
 								contentSection.append(formatedElement2)
 								contentSection.append(formatedElement3)
@@ -69,7 +73,7 @@ function formatContent() {
 								contentSection.classList.remove("show-content")
 								contentSection.append(contentLabel)
 								contentButton.onclick = contentFlipper
-								contentButton.innerHTML = "Add Content"
+								contentButton.innerHTML = "Add Class"
 								formatContent()
 						}
 				}
@@ -97,9 +101,6 @@ const addContent = () => {
 				<input class="input-label" type="text" id="group-number"/>
 				`)
 		contentSection.append(inputButton)
-		addInput()
-		addInput()
-		addInput()
 }
 
 const submitContent = () => {
@@ -127,8 +128,10 @@ async function initialize(){
 	await fetch("https://shanemansueto.github.io/web_dev_class/resources/placeholder_classes.json")
 	.then(res => res.json())
 	.then(json => {
+			console.log(json)
 			json.forEach(item => {
-					localStorage.setItem(item.title, JSON.stringify(item))
+					console.log(item)
+					localStorage.setItem(item.group_number, JSON.stringify(item))
 			})
 	})
 	formatContent()
@@ -137,11 +140,11 @@ initialize()
 const contentFlipper = () => {
 		if (contentFlip) {
 				submitContent()
-				contentButton.innerHTML = "Add Content"
+				contentButton.innerHTML = "Add Class"
 		}
 		else {
 				addContent()
-				contentButton.innerHTML = "Submit Content"
+				contentButton.innerHTML = "Submit Class"
 		}
 		contentFlip = !contentFlip
 }
