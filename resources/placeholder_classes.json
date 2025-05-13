@@ -1,0 +1,44 @@
+[	
+		{
+				"course":"math101",
+				"group_number":48
+				"class_list":[
+						{
+								"user_id":1111,
+								"username":"joe jody",
+								"gpa":1.0
+						},
+						{
+								"user_id":1112,
+								"username":"spencer kars",
+								"gpa":3.0
+						},
+						{
+								"user_id":1113,
+								"username":"walter white",
+								"gpa":5.0
+						}
+				]
+		},
+		{
+				"course":"math2",
+				"group_number":12
+				"class_list":[
+						{
+								"user_id":1111,
+								"username":"poe doby",
+								"gpa":1.0
+						},
+						{
+								"user_id":1112,
+								"username":"pencil mars",
+								"gpa":3.0
+						},
+						{
+								"user_id":1113,
+								"username":"lex luthor",
+								"gpa":5.0
+						}
+				]
+		}
+]
