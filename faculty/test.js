@@ -7,13 +7,7 @@ inputButton.className = "input-button"
 inputButton.innerHTML = "+"
 let contentFlip = 0
 
-fetch("https://shanemansueto.github.io/web_dev_class/resources/placeholder_questionares.json")
-.then(res => res.json())
-.then(json => {
-		json.forEach(item => {
-				localStorage.setItem(item.title, JSON.stringify(item))
-		})
-})
+
 
 let inputCount = 0
 
@@ -34,7 +28,7 @@ const addInput = () => {
 
 inputButton.onclick = addInput
 
-const formatContent = () => {
+function formatContent() {
 		for (var i = 0; i < localStorage.length; i++) {
 				let item = JSON.parse(localStorage.getItem(localStorage.key(i)))
 				let formatedItem = document.createElement("a")
@@ -127,8 +121,17 @@ const submitContent = () => {
 		formatContent()
 }
 
-formatContent()
-
+async function initialize(){
+	await fetch("https://shanemansueto.github.io/web_dev_class/resources/placeholder_questionares.json")
+	.then(res => res.json())
+	.then(json => {
+			json.forEach(item => {
+					localStorage.setItem(item.title, JSON.stringify(item))
+			})
+	})
+	formatContent()
+}
+initialize()
 const contentFlipper = () => {
 		if (contentFlip) {
 				submitContent()

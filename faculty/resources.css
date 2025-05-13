@@ -1,0 +1,5 @@
+@import "base.css";
+
+.content-section{
+		--columns: 1fr 2fr;
+}

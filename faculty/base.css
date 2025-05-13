@@ -1,4 +1,6 @@
 a{
+		color: black;
+		text-decoration: None;
 		cursor: pointer;
 }
 button{
@@ -9,8 +11,8 @@ span{
 }
 
 body{
-		--hue: 0;
-		--saturation: 0;
+		--hue: 100;
+		--saturation: 20;
 		--lightness: 15;
 		--opacity: 1;
 		--color: hsla(var(--hue) var(--saturation) var(--lightness)/var(--opacity));
@@ -20,13 +22,16 @@ body{
 		height:100svh;
 		margin: 0;
 		max-height:100svh;
+	  font-family: "Merriweather", serif;
+	  font-optical-sizing: auto;
+	  font-weight: 400;
+	  font-style: normal;
+	  font-variation-settings:
+	    "wdth" 100;
 }
 
 .sidebar{
-		--hue: 0;
-		--saturation: 0;
-		--lightness: 70;
-		--opacity: 1;
+		--lightness: 65;
 		--color: hsla(var(--hue) var(--saturation) var(--lightness)/var(--opacity));
 		border: solid 2px;
 		background-color: var(--color);
@@ -43,27 +48,33 @@ body{
 }
 
 .sidebar-item{
-		display: grid;
-		justify-content: center;
+		display: flex;
+		//justify-content: center;
+		align-content: center;
+		text-align: center;
 		padding-bottom:6px;
 		padding-top:6px;
+		padding-left: 10%;
 		width:100%;
 		&:hover{
 				--color: hsla(var(--hue) var(--saturation) var(--lightness)/var(--opacity));
 				--lightness: 10;
-				--saturation: 0;
 				--opacity: 0.1;
 				background-color: var(--color);
 				transform: scale(1.1);
 				transition: background-color 0.5s;
 		}
+		img {
+			width: 24px;
+			height: 24px;
+			padding-right: 2px;
+		}
 }
 
 main{
-		--hue: 0;
-		--saturation: 0;
+		--hue: 200;
+		--saturation: 20;
 		--lightness: 80;
-		--opacity: 1;
 		--color: hsla(var(--hue) var(--saturation) var(--lightness)/var(--opacity));
 		background-color: var(--color);
 		border: solid 2px;
@@ -74,7 +85,8 @@ main{
 		margin-top: 8px;
 		padding: 24px;
 		display: grid;
-		grid-template-rows: 1fr 7.5fr 1.5fr;
+		grid-template-rows: 1fr 7.5fr 1fr;
+		max-height: 88svh
 }
 
 .content-header{
@@ -83,15 +95,14 @@ main{
 }
 
 .content-section{
-		--saturation: 0;
+		--saturation: 30;
 		--lightness: 80;
-		--opacity: 1;
 		--color: hsla(var(--hue) var(--saturation) var(--lightness)/var(--opacity));
 		--columns: 1fr 2fr;
 		background-color: var(--color);
 		border: solid 2px;
 		border-radius: 4px;
-		max-height: 65svh;
+		//max-height: 65svh;
 		overflow-y: auto;
 }
 
@@ -133,10 +144,7 @@ main{
 }
 
 .content-button{
-		--hue: 0;
-		--saturation: 0;
-		--lightness: 15;
-		--opacity: 1;
+		--lightness: 85;
 		--color: hsla(var(--hue) var(--saturation) var(--lightness)/var(--opacity));
 		background-color: var(--color);
 		padding: 8px;
@@ -145,6 +153,7 @@ main{
 		margin-bottom: 24px;
 		font-size: 16px;
 		min-height: 60px;
+		margin-top: 16px;
 }
 
 .input-wrapper{
